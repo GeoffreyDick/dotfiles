@@ -5,9 +5,9 @@ if command -v nvim &> /dev/null; then
 fi
 
 # Install Neovim
-curl "https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.tar.gz" -o "nvim-linux64.tar.gz"
-tar xzvf nvim-linux64.tar.gz
-sudo ./nvim-linux64/bin/nvim
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt-get update && sudo apt-get install neovim
+nvim
 
 # Install Nerd Font
 mkdir -p ~/.local/share/fonts

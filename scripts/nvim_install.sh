@@ -10,7 +10,7 @@ sudo apt-get update && sudo apt-get install neovim -y
 
 # Install Nerd Font
 mkdir -p ~/.local/share/fonts
-curl "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/CascadiaCode.zip" -o "CascadiaCode.zip"
+curl "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/CascadiaCode.zip"
 unzip CascadiaCode.zip ~/.local/share/fonts
 rm CascadiaCode.zip
 

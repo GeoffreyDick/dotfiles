@@ -9,10 +9,13 @@ sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt-get update && sudo apt-get install neovim -y
 
 # Install Nerd Font
-mkdir -p ~/.local/share/fonts
-curl -LJO "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/CascadiaCode.zip"
-unzip CascadiaCode.zip ~/.local/share/fonts/*
-rm CascadiaCode.zip
+(
+  mkdir -p ~/.local/share/fonts
+  cd ~/.local/share/fonts
+  curl -LJO "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/CascadiaCode.zip"
+  unzip CascadiaCode.zip
+  rm CascadiaCode.zip
+)
 
 # Install ripgrep
 sudo apt-get install ripgrep -y

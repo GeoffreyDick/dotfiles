@@ -5,9 +5,8 @@ if command -v nvim &> /dev/null; then
 fi
 
 # Install Neovim
-sudo add-apt-repository ppa:neovim-ppa/unstable
-sudo apt-get update && sudo apt-get install neovim
-nvim
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
+sudo apt-get update && sudo apt-get install neovim -y
 
 # Install Nerd Font
 mkdir -p ~/.local/share/fonts
@@ -16,7 +15,7 @@ unzip CascadiaCode.zip ~/.local/share/fonts
 rm CascadiaCode.zip
 
 # Install ripgrep
-sudo apt-get install ripgrep
+sudo apt-get install ripgrep -y
 
 # Install NvChad
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1

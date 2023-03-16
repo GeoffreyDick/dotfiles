@@ -12,9 +12,7 @@ sudo apt-get update && sudo apt-get install neovim -y
 (
   mkdir -p ~/.local/share/fonts
   cd ~/.local/share/fonts
-  curl -LJO "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/CascadiaCode.zip"
-  unzip CascadiaCode.zip
-  rm CascadiaCode.zip
+  curl -fLo "Caskaydia Cove Nerd Font Complete Regular.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/CascadiaCode/Regular/complete/Caskaydia%20Cove%20Nerd%20Font%20Complete%20Regular.otf
 )
 
 # Install ripgrep

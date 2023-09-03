@@ -6,11 +6,7 @@ CURRENT=$PWD
 
 cd $TMPDIR
 
-if command -v bun &> /dev/null; then
-  else
-else
-  curl -fsSL https://bun.sh/install | bash
-fi
+curl -fsSL https://bun.sh/install | bash
 
 for script in ./scripts/*; do
   bash "$script"

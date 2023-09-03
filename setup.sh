@@ -6,7 +6,13 @@ CURRENT=$PWD
 
 cd $TMPDIR
 
-for script in ~/.dotfiles/scripts/*; do
+if command -v bun &> /dev/null; then
+  else
+else
+  curl -fsSL https://bun.sh/install | bash
+fi
+
+for script in ./scripts/*; do
   bash "$script"
 done
 

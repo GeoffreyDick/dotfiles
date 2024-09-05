@@ -4,3 +4,4 @@ default_roles:
   - fonts
   - mise
   - neovim
+  - tldr

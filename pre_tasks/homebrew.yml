@@ -1,0 +1,18 @@
+---
+- name: Check if Homebrew is installed
+  block:
+    - name: Attempt Homebrew command
+      ansible.builtin.command: brew --version
+      check_mode: true
+
+    - name: Homebrew available
+      debug:
+        msg: Homebrew is installed
+
+  rescue:
+    - name: Homebrew unavailable
+      debug:
+        msg: Homebrew is not installed
+
+    - name: Install Homebrew
+      ansible.builtin.shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh NONINTERACTIVE=1)"

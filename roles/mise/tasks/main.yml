@@ -1,0 +1,4 @@
+---
+- name: Run Linux tasks
+  ansible.builtin.import_tasks: linux.yml
+  when: ansible_system == 'Linux'

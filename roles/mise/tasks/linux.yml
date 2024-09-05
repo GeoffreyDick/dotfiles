@@ -1,0 +1,15 @@
+---
+- name: Install mise
+  ansible.builtin.shell: curl https://mise.run | sh
+
+- name: Activate mise in bash
+  ansible.builtin.shell: echo 'eval "$(~/.local/bin/mise activate bash)"' >> ~/.bashrc
+
+- name: Activate mise in fish
+  ansible.builtin.shell: echo '~/.local/bin/mise activate fish | source' >> ~/.config/fish/config.fish
+  args:
+    executable: /home/linuxbrew/.linuxbrew/bin/fish
+
+- name: Add tools
+  command: mise use --global {{ item }}
+  loop: "{{ mise_tools }}"

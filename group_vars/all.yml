@@ -2,3 +2,4 @@ default_roles:
   - lazygit
   - fish
   - fonts
+  - mise

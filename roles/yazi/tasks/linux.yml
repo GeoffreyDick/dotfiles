@@ -1,0 +1,45 @@
+---
+- name: Install optional dependency ffmpegthumbnailer
+  community.general.homebrew:
+    name: ffmpegthumbnailer
+    state: latest
+
+- name: Install optional dependency sevenzip
+  community.general.homebrew:
+    name: sevenzip
+    state: latest
+
+- name: Install optional dependency jq
+  community.general.homebrew:
+    name: jq
+    state: latest
+
+- name: Install optional dependency poppler
+  community.general.homebrew:
+    name: poppler
+    state: latest
+
+- name: Install optional dependency fd
+  community.general.homebrew:
+    name: fd
+    state: latest
+
+- name: Install optional dependency ripgrep
+  community.general.homebrew:
+    name: ripgrep
+    state: latest
+
+- name: Install optional dependency fzf
+  community.general.homebrew:
+    name: fzf
+    state: latest
+
+- name: Install optional dependency imagemagick
+  community.general.homebrew:
+    name: imagemagick
+    state: latest
+
+- name: Install yazi
+  community.general.homebrew:
+    name: yazi
+    state: latest

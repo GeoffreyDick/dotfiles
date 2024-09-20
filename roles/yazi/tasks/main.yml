@@ -1,0 +1,41 @@
+---
+- name: "Check for distribution config: {{ ansible_distribution }}"
+  ansible.builtin.stat:
+    path: "{{ role_path }}/tasks/{{ ansible_distribution|lower }}.yml"
+  register: task_config
+
+- name: "Handle no distribution config"
+  debug:
+    msg: "No distribution config."
+  when: not task_config.stat.exists
+
+- name: "Check for OS family config: {{ ansible_os_family }}"
+  ansible.builtin.stat:
+    path: "{{ role_path }}/tasks/{{ ansible_os_family|lower }}.yml"
+  register: task_config
+  when: not task_config.stat.exists
+
+- name: "Handle no OS family config"
+  debug:
+    msg: "No OS family config."
+  when: not task_config.stat.exists
+
+- name: "Check for system config: {{ ansible_system }}"
+  ansible.builtin.stat:
+    path: "{{ role_path }}/tasks/{{ ansible_system|lower }}.yml"
+  register: task_config
+  when: not task_config.stat.exists
+
+- name: "Handle no system config"
+  debug:
+    msg: "No system config."
+  when: not task_config.stat.exists
+
+- name: "Handle no config"
+  debug:
+    msg: "No config for this device. Skipping role."
+  when: not task_config.stat.exists
+
+- name: "Run tasks"
+  ansible.builtin.include_tasks: "{{ task_config.stat.path }}"
+  when: task_config.stat.exists

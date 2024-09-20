@@ -5,3 +5,4 @@ default_roles:
   - mise
   - neovim
   - tldr
+  - yazi

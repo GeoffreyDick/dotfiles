@@ -16,3 +16,8 @@
 
     - name: Install Homebrew
       ansible.builtin.shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh NONINTERACTIVE=1)"
+
+- name: Update Homebrew
+  community.general.homebrew:
+    update_homebrew: true
+    upgrade_all: true
